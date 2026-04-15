@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Today</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>News Aggregator</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showHome()">Home</a></li>
+                    <li><a href="#" onclick="showCategory('tech')">Tech</a></li>
+                    <li><a href="#" onclick="showCategory('finance')">Finance</a></li>
+                    <li><a href="#" onclick="showCategory('sports')">Sports</a></li>
+                    <li><a href="#" onclick="showCategory('world')">World</a></li>
+                </ul>
+                <div class="search">
+                    <input type="text" placeholder="Search articles..." id="searchInput" title="Search by title or content">
+                    <input type="date" id="startDate" title="Start date (leave empty for all dates)">
+                    <input type="date" id="endDate" title="End date (leave empty for all dates)">
+                    <button onclick="searchArticles()">Search</button>
+                    <button onclick="clearFilters()">Clear</button>
+                    <small style="margin-left: 10px; color: #ccc; align-self: center;">Use dates to access month-old news</small>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Leaderboard Ad -->
+    <div class="ad-leaderboard">
+        <div class="ad-slot" style="width: 728px; height: 90px; border: 2px dashed #ccc; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+            Ad Placeholder - Leaderboard (728x90)
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="content-wrapper">
+            <!-- Article Grid -->
+            <div class="article-grid" id="articleGrid">
+                <!-- Articles will be loaded here -->
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Rectangle Ad -->
+                <div class="ad-rectangle">
+                    <div class="ad-slot" style="width: 300px; height: 250px; border: 2px dashed #ccc; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+                        Ad Placeholder - Rectangle (300x250)
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading articles...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div id="errorMessage" class="error-message" style="display: none;">
+            <p>Sorry, we couldn't load the articles right now. Please try again later.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Content sourced from respective publishers. All rights reserved to original authors.</p>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Advertise</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky Footer Ad -->
+    <div class="mobile-ad-footer">
+        <div class="ad-slot" style="width: 320px; height: 50px; border: 2px dashed #ccc; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+            Ad Placeholder - Mobile Sticky (320x50)
+        </div>
+    </div>
+
+    <!-- Article Modal for Single Article View -->
+    <div id="articleModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="articleContent">
+                <!-- Article details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
